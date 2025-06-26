@@ -1,5 +1,17 @@
 # Utility to Load Synthea CSV data to OMOP CDM
 
+# gl notes
+
+edited '/inst/sql/sql_server/cdm_version/v531/insert_location.sql'
+
+```
+cast(null as varchar)               county,
+```
+
+```
+p.county               county,
+```
+
 ## Currently supports CDM v5.3 and v5.4
 
 Follow the steps on the [synthea wiki](https://github.com/synthetichealth/synthea/wiki) to run the program and generate the files. This builder works off of the csv files, not the fhir files. To do this the `exporter.csv.export` option in the `./src/main/resources/synthea.properties` file needs to be set to TRUE.
