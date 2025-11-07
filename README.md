@@ -2,15 +2,23 @@
 
 # gl notes
 
-edited '/inst/sql/sql_server/cdm_version/v531/insert_location.sql'
+Need to have county in OMOP. the official package set county as null even if county data is available.
 
+To have county column with values, I edited sql script: '/inst/sql/sql_server/cdm_version/v531/insert_location.sql'
+
+official version:
 ```
 cast(null as varchar)               county,
 ```
 
+edited version:
 ```
 p.county               county,
 ```
+
+- 2025-11-07
+
+Added functions to load vocabulary files (csv or parquet) individually.
 
 ## Currently supports CDM v5.3 and v5.4
 
